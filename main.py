@@ -1,11 +1,9 @@
 import random
+from network import neural_network
 
 train_dataset = [
-	[0, 0],
-	[1, 2],
-	[2, 4],
-	[3, 6],
-	[4, 8],
+	[0, 1, 2, 3, 4],
+	[0, 2, 4, 6, 8],
 ]
 
 def cost(weight):
@@ -22,6 +20,9 @@ loss_minimum = 0.000001
 learning_rate = 0.01
 
 def main():
+	Network = neural_network(train_dataset[0], train_dataset[1], 2, 4)
+	return
+	Network.train()
 	weight = random.uniform(0, 10)
 	iterations = 0
 	while(True):
